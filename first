@@ -1,0 +1,12 @@
+import pandas as py
+
+data = py.read_csv("gapminder database.csv")
+
+mean_all = data["lifeExp"].mean()
+print("Mean of lifeExp from all the data:", mean_all)
+
+mean_country = data.groupby("country")["lifeExp"].mean()
+print("Mean of life expentency country wise",mean_country)
+
+mean_continent = data.groupby("continent")["lifeExp"].mean()
+print("Mean of lifeExp continent wise ",mean_continent)
